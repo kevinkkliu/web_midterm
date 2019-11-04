@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    
+    <div is="page" id="home" data-role="page" style="background:-webkit-linear-gradient(rgb(8, 8, 8),rgb(8, 8, 0))">
+        <div is="header" data-role="header" data-position="fixed" data-theme="b">
+            <h3>會員功能</h3>
+            <a class="ui-btn ui-btn-left  ui-btn-icon-left ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="slide" href="index.html" rel="external">Back</a>
+        </div>
+        <div is="content" role="main" class="ui-content">
+            <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+                <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(rgb(212, 63, 63),rgb(199, 148, 91)); color:#fff;">設定</li>
+            </ul>
+            <ul is="listview" data-role="listview" data-inset="true" id="hero_list" style="margin:0;">
+                <li is="listview-li">
+                    <a href="#Content1" data-transition="slide">基本資訊</a>
+                </li>
+                <li is="listview-li">
+                    <a href="#Content2" data-transition="flip">購物車</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>    
+<!-- 基本資訊 Page: Content  -->
+<div id="Content1" data-role="page" style="background:-webkit-linear-gradient(rgb(8, 8, 8),rgb(8, 8, 0))">
+        <div data-role="header" data-position="fixed" data-theme="b" >
+            <h3>會員功能</h3>
+            <a class="ui-btn ui-btn-left" href="#home" data-transition="slide" data-direction="reverse">Back</a>
+        </div>
+        <div class="ui-content">
+            
+            <div id="hero" style="font-size:20px; font-weight:bold; width:100%; text-align:center;">
+                    <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+                            <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(rgb(212, 63, 63),rgb(199, 148, 91)); color:#fff;">基本資訊</li>
+                    </ul>
+                </div>
+            <!-- <div><img src="cake/chocolate.jpg" style="width:100%;"></div> -->
+
+            <div class="ui-field-contain">
+                    <label for="name" style="color: white;">EMAIL:</label>
+                    <input type="text" name="name" id="name" value="">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="name" style="color: white;">生日:</label>
+                    <input type="text" name="text" id="text" value="">
+                </div>
+                <div class="ui-field-contain">
+                        <label for="name" style="color: white;">寄送地址:</label>
+                        <input type="text" name="text" id="text" value="">
+                </div>
+                <div class="ui-field-contain">
+                        <label for="name" style="color: white;">性別:</label>
+                        <input type="text" name="text" id="text" value="">
+                </div>
+                <button type="submit" onclick="location.href='memberView.html'">送出</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 購物車 Page: Content  -->
+    <div id="Content2" data-role="page"  style="background:-webkit-linear-gradient(rgb(8, 8, 8),rgb(8, 8, 0))">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h3>會員功能</h3>
+            <a class="ui-btn ui-btn-left" href="#home" data-transition="slide" data-direction="reverse">Back</a>
+        </div>
+        <div class="ui-content">
+                <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+                        <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(rgb(212, 63, 63),rgb(199, 148, 91)); color:#fff;">購物車</li>
+                </ul>
+                <ul is="listview" data-role="listview" data-inset="true" id="hero_list" style="margin:0;">
+                        <li is="listview-li">
+                            <a href='memberView.html' data-transition="slide" >購物車是空的</a>
+                        </li>
+                    </ul>
+            <!-- <div><img src="cake/chocolate.jpg" style="width:100%;"></div> -->
+        </div>
+    </div>
+    
+    <!-- 訂單狀態 Page: Content  -->
+    <div id="Content3" data-role="page"  style="background:-webkit-linear-gradient(rgb(8, 8, 8),rgb(8, 8, 0))">
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h3>會員功能</h3>
+            <a class="ui-btn ui-btn-left" href="#home" data-transition="slide" data-direction="reverse">Back</a>
+        </div>
+        <div class="ui-content">
+                <ul is="listview" data-role="listview" data-inset="true" style="margin-top:0;">
+                        <li is="list-divider" data-role="list-divider" style="text-align:center;font-size:20px; background:-webkit-linear-gradient(rgb(212, 63, 63),rgb(199, 148, 91)); color:#fff;">訂單狀態</li>
+                </ul>
+                <div class="ui-field-contain">
+                        <label for="name" style="color: white;">訂單目前有三筆</label>
+                </div>
+                <ul is="listview" data-role="listview" data-inset="true" id="hero_list" style="margin:0;">
+                        <li is="listview-li">
+                                <a data-transition="pop"><div><img src="cake/green.jpg" style="width:10%;">薄荷巧克蛋糕</div></a>
+                        </li>
+                        <li is="listview-li">
+                                <a data-transition="flip"><div><img src="cake/rainbow.jpg" style="width:10%;">七色彩紅蛋糕</div></a>
+                        </li>
+                        <li is="listview-li">
+                                <a data-transition="flip"><div><img src="cake/cheesetart.jpg" style="width:10%;">起司塔</div></a>
+                        </li>
+                    </ul>
+            <!-- <div><img src="cake/chocolate.jpg" style="width:100%;"></div> -->
+        </div>
+    </div>
+</body>
+</html>

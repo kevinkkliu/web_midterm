@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+      #map {
+        width: 100%;
+        height: 800px;
+        background-color: rgb(0, 0, 0);
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div is="page" id="home" data-role="page" style="background:-webkit-linear-gradient(rgb(8, 8, 8),rgb(8, 8, 0))">
+        <div is="header" data-role="header" data-position="fixed" data-theme="b">
+        <h3>Probably Here</h3>
+        
+        
+        <a class="ui-btn ui-btn-left  ui-btn-icon-left ui-icon-home ui-btn-icon-notext ui-corner-all" data-transition="slide" href="index.html" rel="external">Back</a>
+        <div id="map" style="color: purple;">
+        <div is="content" role="main" class="ui-content"></div>
+            <script>
+                    // Note: This example requires that you consent to location sharing when
+                    // prompted by your browser. If you see the error "The Geolocation service
+                    // failed.", it means you probably did not give permission for the browser to
+                    // locate you.
+                    var map, infoWindow;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                        center: {lat: 23.701181, lng: 120.433308},
+                        zoom: 15
+                        });
+                        infoWindow = new google.maps.InfoWindow;
+                
+                        // Try HTML5 geolocation.
+                        if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(function(position) {
+                            var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                            };
+                            
+                            infoWindow.setPosition(pos);
+                            infoWindow.setContent('您的大概位置');
+                            infoWindow.open(map);
+                            map.setCenter(pos);
+                        }, function() {
+                            handleLocationError(true, infoWindow, map.getCenter());
+                        });
+                        } else {
+                        // Browser doesn't support Geolocation
+                        handleLocationError(false, infoWindow, map.getCenter());
+                        }
+                    }
+                
+                    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+                        infoWindow.setPosition(pos);
+                        infoWindow.setContent(browserHasGeolocation ?
+                                            '您的大概位置?' :
+                                            'Error: Your browser doesn\'t support geolocation.');
+                        infoWindow.open(map);
+                    }
+            </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4UsKR4LxUpOqhuEoXA0wIYpB4KNrLifA&callback=initMap">
+        </script>
+    </body>
+
+</html>
+
+
